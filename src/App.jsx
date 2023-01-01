@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="container">
       <fieldset>
-        <legend>App.jsx</legend>
+        <legend></legend>
           <Routes>
               <Route path="/" element={<Form />} />
               <Route path="/dashboard" element = {<Dashboard/>}/>
