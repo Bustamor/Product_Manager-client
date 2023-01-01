@@ -3,6 +3,8 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Table from 'react-bootstrap/Table'
+import Button from 'react-bootstrap/Button';
 
 const Dashboard = () => {
   //STATE
@@ -24,7 +26,7 @@ const Dashboard = () => {
   return (
     <fieldset>
       <legend>Dashboard.jsx</legend>
-      <table>
+      <Table striped boredered hover >
         <thead>
           <tr>
             <th>ID</th>
@@ -44,16 +46,16 @@ const Dashboard = () => {
                   <td>{price}</td>
                   <td>{description}</td>
                   <td>
-                    <Link to={`/products/${_id}`}>View</Link>
-                    <Link to={`/products/edit/${_id}`}>Edit</Link>
-                    <button onClick={() =>deleteProduct(_id)} >Delete</button>
+                    <Link to={`/products/${_id}`}>View</Link> {' '}
+                    <Link to={`/products/edit/${_id}`}>Edit</Link> {' '}
+                    <Button size='sm' variant="info" onClick={() =>deleteProduct(_id)} >Delete</Button>
                   </td>
                 </tr>
               )
             })
           }
         </tbody>
-      </table>
+      </Table>
     </fieldset>
 
   )
